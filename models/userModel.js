@@ -15,14 +15,14 @@ const userSchema = new mongoose.Schema(
     name: {
       type: String,
       trim: true,
-      required: true,
+      required: [true, 'Name is required'],
       max: 32,
     },
     email: {
       type: String,
       trim: true,
       required: true,
-      unique: true,
+      unique: [true, 'Email already exist'],
       lowercase: true,
     },
     hashed_password: {
