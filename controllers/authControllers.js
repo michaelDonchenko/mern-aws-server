@@ -42,7 +42,7 @@ exports.register = (req, res) => {
       { name, email, password },
       process.env.JWT_ACCOUNT_ACTIVATION,
       {
-        expiresIn: '30m',
+        expiresIn: '7d',
       }
     )
 
@@ -137,7 +137,7 @@ exports.login = async (req, res) => {
 
     //if everything passed generate a token and send to the client
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1d',
+      expiresIn: '7d',
     })
 
     res.status(200).json({

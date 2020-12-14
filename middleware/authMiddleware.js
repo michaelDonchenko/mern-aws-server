@@ -1,3 +1,5 @@
+const User = require('../models/userModel')
+
 //auth middleware
 exports.authMiddleware = (req, res, next) => {
   const authUserId = req.user._id
